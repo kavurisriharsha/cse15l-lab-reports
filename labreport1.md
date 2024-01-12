@@ -2,8 +2,8 @@
 
 ## `cd`
 
-When `cd` is used with a folder as an argument, the working directory is changed to the specified folder.
-  ###### Working directory is `/home/lecture1` and is being changed into `/home/lecture1/messages/`
+When `cd` is used with a folder as an argument, the working directory is changed to the specified folder.  
+  <sub> Working directory is `/home/lecture1` and is being changed into `/home/lecture1/messages/`
   ```
   [user@sahara ~/lecture1]$ cd messages
   [user@sahara ~/lecture1/messages]$ pwd
@@ -12,8 +12,8 @@ When `cd` is used with a folder as an argument, the working directory is changed
   > This is intended behaviour and is the most common use case of `cd`, or "change directory".
 
 
-When `cd` is used with a file as an argument, in this case, `en-us.txt`, an **error** is displayed as follows.
-  ###### Working directory is `/home/lecture1/messages/`
+When `cd` is used with a file as an argument, in this case, `en-us.txt`, an **error** is displayed as follows.  
+  <sub> Working directory is `/home/lecture1/messages/`
   ```
   [user@sahara ~/lecture1/messages]$ cd en-us.txt 
   bash: cd: en-us.txt: Not a directory
@@ -21,8 +21,8 @@ When `cd` is used with a file as an argument, in this case, `en-us.txt`, an **er
   > This is displayed as `cd`, "change directory" is to be used with a directory as an argument. When it is used with a file, it returns an error as files cannot be switched into.
 
 
-When `cd` is used without any arguments, the working directory is changed to `/home`.
-  ###### Working directory is `/home/lecture1/messages/` and is being changed into `/home/`
+When `cd` is used without any arguments, the working directory is changed to `/home`.  
+  <sub> Working directory is `/home/lecture1/messages/` and is being changed into `/home/`
   ```
   [user@sahara ~/lecture1/messages]$ cd
   [user@sahara ~]$ pwd
@@ -33,8 +33,8 @@ When `cd` is used without any arguments, the working directory is changed to `/h
 
 ## `ls`
 
-When `ls` is used with a folder as an argument, the contents of the specified folder are displayed.
-  ###### Working directory is `/home/`
+When `ls` is used with a folder as an argument, the contents of the specified folder are displayed.  
+  <sub> Working directory is `/home/`
   ```
   [user@sahara ~]$ ls lecture1/
   Hello.class  Hello.java  messages  README
@@ -42,8 +42,8 @@ When `ls` is used with a folder as an argument, the contents of the specified fo
   > `ls` stands for "list". So, it lists all the files and directories within the specified folder.
 
 
-When `ls` is used with a file as an argument, the path of the file is displayed, as input in the argument(i.e. path is not resolved).
-  ###### Working directory is `/home/`
+When `ls` is used with a file as an argument, the path of the file is displayed, as input in the argument(i.e. path is not resolved).  
+  <sub> Working directory is `/home/`
   ```
   [user@sahara ~]$ ls lecture1/Hello.java
   lecture1/Hello.java
@@ -52,8 +52,8 @@ When `ls` is used with a file as an argument, the path of the file is displayed,
   ```
   > This behavior is exhibited as `ls` cannot "list" the contents of a file. Since the file contains no files within itself, the file path, as given in the argument is displayed.
 
-When `ls` is used without any arguments, the contents of the working directory are displayed.
-  ###### Working directory is `/home/lecture1/`
+When `ls` is used without any arguments, the contents of the working directory are displayed.  
+  <sub> Working directory is `/home/lecture1/`
   ```
   [user@sahara ~/lecture1]$ ls
   Hello.class  Hello.java  messages  README
@@ -63,16 +63,16 @@ When `ls` is used without any arguments, the contents of the working directory a
 
 ## `cat`
 
-When `cat` is used with a folder as an argument, an **error** is displayed as follows.
-  ###### Working directory is `/home/lecture1/`
+When `cat` is used with a folder as an argument, an **error** is displayed as follows.  
+  <sub> Working directory is `/home/lecture1/`
   ```
   [user@sahara ~/lecture1]$ cat messages/
   cat: messages/: Is a directory
   ```
   > This message is displayed as `cat` is to be used with files and it doesn't know how directories are to be handled. To concatenate and display the contents of all the files within the `messages` directory, `cat messages/*` can be used instead.
  
-When `cat` is used with a file as an argument, the contents of the file are displayed.
-  ###### Working directory is `/home/lecture1/`
+When `cat` is used with a file as an argument, the contents of the file are displayed.  
+  <sub> Working directory is `/home/lecture1/`
   ```
   [user@sahara ~/lecture1]$ cat Hello.java 
   import java.io.IOException;
@@ -89,8 +89,8 @@ When `cat` is used with a file as an argument, the contents of the file are disp
   ```
   > `cat` or "concatenate" takes one or more file-paths as arguments, which are all concatenated, or joined end to end and displayed in the order they were specified.
 
-When `cat` is used with no arguments, it initially seems like it does nothing. However, the command is in fact waiting for the user input which it then prints in the next line. This can be exited using `Ctrl+C`.
-  ###### Working directory is `/home/lecture1/`
+When `cat` is used with no arguments, it initially seems like it does nothing. However, the command is in fact waiting for the user input which it then prints in the next line. This can be exited using `Ctrl+C`.  
+  <sub> Working directory is `/home/lecture1/`
   ```
   [user@sahara ~/lecture1]$ cat
   Input
