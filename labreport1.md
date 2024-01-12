@@ -46,7 +46,7 @@ When `ls` is used without any arguments, the contents of the working directory a
 [user@sahara ~/lecture1]$ ls
 Hello.class  Hello.java  messages  README
 ```
-
+##
 
 ## `cat`
 
@@ -79,5 +79,5 @@ Input
 Input
 ^C
 ```
-
+##
 
