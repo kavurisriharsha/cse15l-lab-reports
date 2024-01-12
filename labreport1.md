@@ -27,7 +27,7 @@ When `cd` is used without any arguments, the working directory is changed to `/h
   /home
   ```
   > If this is used within the context of a different user, the working directory would be set to that user's home directory.
-##
+
 
 ## `ls`
 
@@ -54,7 +54,7 @@ When `ls` is used without any arguments, the contents of the working directory a
   Hello.class  Hello.java  messages  README
   ```
   > The default argument that `ls` takes when no other argument is explicitly specified is `./` or the present directory. 
-##
+
 
 ## `cat`
 
@@ -90,5 +90,5 @@ When `cat` is used with no arguments, it initially seems like it does nothing. H
   ^C
   ```
   > Since there is no file specified to be concatenated, `cat`, by default, displays the user input. The key combination `Ctrl+C` acts as an interrupt and breaks out of this loop.
-##
+
 
