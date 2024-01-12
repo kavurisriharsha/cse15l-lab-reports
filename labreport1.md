@@ -1,4 +1,4 @@
-# **Lab Report - 1**
+# **Lab Report - 1** #
 
 
 ## `cd`
@@ -23,7 +23,7 @@ When `cd` is used without any arguments, the working directory is changed to `/h
 /home
 ```
 If this is used within the context of a different user, the working directory would be set to that user's home directory.
-
+##
 
 ## `ls`
 
