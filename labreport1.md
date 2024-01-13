@@ -14,7 +14,6 @@ The folder structure of the workspace is as follows:
 ```
 
 The active user is `user`.
-___
 
 ## `cd`
 
