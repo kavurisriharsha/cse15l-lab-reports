@@ -1,5 +1,21 @@
 # **Lab Report - 1**
 
+The folder structure of the workspace is as follows:
+
+```bash
+/home:
+  lecture1
+
+/home/lecture1
+  Hello.class Hello.java messages README
+
+/home/lecture1/messages:
+  en-us.txt es-mx.txt zh-cn.txt
+```
+
+The active user is `user`.
+___
+
 ## `cd`
 
 When `cd` is used with a folder as an argument, the working directory is changed to the specified folder.  
@@ -88,6 +104,15 @@ When `cat` is used with a file as an argument, the contents of the file are disp
   }
   ```
   > `cat` or "concatenate" takes one or more file-paths as arguments, which are all concatenated, or joined end to end and displayed in the order they were specified.
+
+When `cat` is used with 2 files as arguments, the contents of the files are displayed in the order that they were specified.
+  <sub> Working directory is `/home/lecture1`
+  ```bash
+  [user@sahara ~/lecture1]$ cat ./messages/en-us.txt ./messages/es-mx.txt ./messages/zh-cn.txt 
+  Hello World!¡Hola Mundo!
+  你好世界
+  ```
+> It is important to note that `cat` does not insert newline characters at the end of a file. The contents of the files are concatenated end to end as they occur in the file itself. In this particular example, the newline character has been removed from `en-us.txt` which results in the contents of `es-mx.txt` being printed immediately after i.e. starting on the same line without any whitespace immediately after the last character of `en-us.txt`. 
 
 When `cat` is used with no arguments, it initially seems like it does nothing. However, the command is in fact waiting for the user input which it then prints in the next line. This can be exited using `Ctrl+C`.  
   <sub> Working directory is `/home/lecture1/`
