@@ -6,7 +6,7 @@ The folder structure of the workspace is as follows:
 /home:
   lecture1
 
-/home/lecture1
+/home/lecture1:
   Hello.class Hello.java messages README
 
 /home/lecture1/messages:
