@@ -2,13 +2,13 @@
 
 The folder structure is as follows:
 ```bash
-~/:
+/home/gram:
   .ssh  wavelet
 
-~/.ssh:
+/home/gram/.ssh:
   id_rsa  id_rsa.pub  known_hosts
 
-~/wavelet:
+/home/gram/wavelet:
   ChatServer.class  README.md      Server.java   URLHandler.class
   ChatServer.java   Handler.class  Server.class  ServerHttpHandler.class
 
@@ -73,7 +73,9 @@ The code implements support for the following requests:
 When `/` is accessed, a message is displayed as follows that demonstrates the correct usage of the program.
 
 
-`/add-message` expects 
+`/add-message` expects 2 query parameters, namely - `s`, the message that the user wants to send, and `user`, the username of the current user. When either one of these parameters is defined illegally, a 404 error is thrown. 
+
+> NOTE: The username can not be empty but the message string has no such rule.
 
 
 
