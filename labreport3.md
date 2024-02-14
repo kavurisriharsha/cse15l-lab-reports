@@ -2,66 +2,14 @@
 
 The folder structure is as follows:
 ```bash
-.:
-DocSearchServer.class  README.md                TestDocSearch.class  count-txts.sh~    start.sh
-DocSearchServer.java   Server.class             TestDocSearch.java   find-results.txt  technical
-FileHelpers.class      Server.java              URLHandler.class     grep-results.txt  test.sh
-Handler.class          ServerHttpHandler.class  count-txts.sh        lib               test.sh~
+/home/gram/cse15l:
+f1  f10  f2
 
-./lib:
-hamcrest-core-1.3.jar  junit-4.13.2.jar
-
-./technical:
-911report  biomed  government  plos
-
-./technical/911report:
-chapter-1.txt   chapter-12.txt    chapter-13.3.txt  chapter-2.txt  chapter-6.txt  chapter-9.txt
-...
-chapter-11.txt  chapter-13.2.txt  chapter-13.5.txt  chapter-5.txt  chapter-8.txt
-
-./technical/biomed:
-1468-6708-3-1.txt   1471-2164-3-34.txt  1471-230X-3-3.txt   1472-684X-1-5.txt   bcr588.txt
-...
-1471-2164-3-33.txt  1471-230X-2-23.txt  1472-6831-3-1.txt   bcr583.txt
-
-./technical/government:
-About_LSC  Alcohol_Problems  Env_Prot_Agen  Gen_Account_Office  Media  Post_Rate_Comm
-
-./technical/government/About_LSC:
-CONFIG_STANDARDS.txt                   ONTARIO_LEGAL_AID_SERIES.txt       Strategic_report.txt
-...
-ODonnell_et_al_v_LSCdecision.txt       State_Planning_Special_Report.txt
-
-./technical/government/Alcohol_Problems:
-DraftRecom-PDF.txt  Session2-PDF.txt  Session3-PDF.txt  Session4-PDF.txt
-
-./technical/government/Env_Prot_Agen:
-1-3_meth_901.txt  ctf1-6.txt   final.txt            nov1.txt                        tech_adden.txt
-atx1-6.txt        ctf7-10.txt  jeffordslieberm.txt  ro_clear_skies_book.txt         tech_sectiong.txt
-bill.txt          ctm4-10.txt  multi102902.txt      section-by-section_summary.txt
-
-./technical/government/Gen_Account_Office:
-GovernmentAuditingStandards_yb2002ed.txt  Testimony_d01609t.txt  im814.txt    og96034.txt  og97023.txt  og98026.txt
-...
-Testimony_cg00010t.txt                    gg96118.txt            og96033.txt  og97020.txt  og98024.txt
-
-./technical/government/Media:
-5_Legal_Groups.txt               Funding_cuts_force.txt              Pro_Bono_Services.txt
-...
-Funding_May_Limit.txt            Pro-bono_road_show.txt
-
-./technical/government/Post_Rate_Comm:
-Cohenetal_Cost_Function.txt  Cohenetal_Scale.txt       Mitchell_6-17-Mit.txt            ReportToCongress2002WEB.txt
-...
-Cohenetal_RuralDelivery.txt  Gleiman_gca2000.txt       Redacted_Study.txt
-
-./technical/plos:
-journal.pbio.0020001.txt  journal.pbio.0020224.txt  pmed.0010008.txt  pmed.0020027.txt  pmed.0020155.txt
-...
-journal.pbio.0020223.txt  journal.pbio.0030137.txt  pmed.0020024.txt  pmed.0020150.txt
+/home/gram/cse15l/folder1:
+f3  f4  f5  f6  f7  f8  f9
 ```
 
-> File names have been redacted for the sake of conserving space. Redacted files have been cloned from https://github.com/kavurisriharsha/docsearch.
+> Files contain a few lines of text that are irrelevant for the sake of this report. Relevant text is displayed in codeblocks when necessary.
 
 ## Bugs
 
@@ -194,7 +142,81 @@ static int[] reversed(int[] arr) {
 
 ### Ignore case
 The `-i` flag can be used to enable case-insensitive search in grep. 
+```bash
+gram@Harsha-Gram:~/cse15l/lr3$ grep -i "text" ./*
+./f1:Text
+./f10:text
+./f2:tExT
+```
 
+### Recursive 
+The `-r` flag can be used to search for patterns recursively i.e. within sub-directories of the specified directory.
+```bash
+gram@Harsha-Gram:~/cse15l/lr3$ grep -r "text" ./
+./f10:text
+./folder1/f3:text
+./folder1/f5:text
+./folder1/f4:text
+```
+> `f10` is a file in the current directory. `f3`, `f4`, `f5` are in the sub-directory `folder1`. All of these files contain the word `text`.
+
+### Line number
+The `-n` flag prints the line number of the matched line for each file.
+```bash
+gram@Harsha-Gram:~/cse15l/lr3/folder1$ grep -n "text" ./*
+./f3:1:text
+./f4:2:text
+./f5:3:text
+```
+> `f3` contains the word `text` on line 1, `f4` contains the word on line 2 and `f5` contains the word on line 3.
+
+### Context 
+The `-C` flag followed by a positive integer `n`, prints `n` number of lines before and after the matched line.
+```bash
+gram@Harsha-Gram:~/cse15l/lr3/folder1$ grep -C 2 "context" ./f6
+l2
+l3
+context
+l4
+l5
+```
+> 2 lines before and after the matched line are printed
+
+### Invert match
+The `-v` flag outputs all the lines that do not match the specified pattern.
+```bash
+gram@Harsha-Gram:~/cse15l/lr3/folder1$ grep -v "pattern" ./f7
+This line
+does not
+match the
+that is
+specified.
+```
+> Line that contains the word `pattern` has been omitted.
+
+### Multiple flags
+These options can be chained together in a single command.
+```bash
+gram@Harsha-Gram:~/cse15l/lr3$ grep -rnC 2 "text" ./
+./f10:1:text
+--
+./folder1/f3:1:text
+--
+./folder1/f6-2-l2
+./folder1/f6-3-l3
+./folder1/f6:4:context
+./folder1/f6-5-l4
+./folder1/f6-6-l5
+--
+./folder1/f5-1-
+./folder1/f5-2-
+./folder1/f5:3:text
+--
+./folder1/f4-1-
+./folder1/f4:2:text
+```
+
+> Here, we can see that the command recursively searched all the files within the working directory and its sub-directory. It also printed 2 lines above and below where applicable along with the line numbers.
 
 
 
