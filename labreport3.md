@@ -137,6 +137,7 @@ static int[] reversed(int[] arr) {
 ```
 
 ## `grep`
+###### NOTE: The source for all the commands listed in this section is the `man grep` command. 
 
 `grep` command is used to find files that contain a certain string pattern. This command has several options that can be enabled by using the respective "flag". 
 
