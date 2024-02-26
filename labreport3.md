@@ -2,13 +2,11 @@
 
 The folder structure is as follows:
 ```bash
-/home/gram/cse15l/docsearch/technical/911report:
-chapter-1.txt   chapter-12.txt    chapter-13.3.txt  chapter-2.txt  chapter-6.txt  chapter-9.txt
-chapter-10.txt  chapter-13.1.txt  chapter-13.4.txt  chapter-3.txt  chapter-7.txt  preface.txt
-chapter-11.txt  chapter-13.2.txt  chapter-13.5.txt  chapter-5.txt  chapter-8.txt
+/home/gram/cse15l/docsearch/technical/:
+911report  biomed  government  plos
 ```
 
-> Files contain a few lines of text that are irrelevant for the sake of this report. Relevant text is displayed in codeblocks when necessary.
+> The files have been cloned from Github. Files contain text that is larely irrelevant to the scope of this document. Text has been mentioned in codeblocks where necessary
 
 ## Bugs
 
