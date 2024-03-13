@@ -53,5 +53,5 @@ To set up this problem scenario, the git repository was cloned and the `grade.sh
 
 ## Reflection
 
-Personally, I was familiar with most of the topics that were covered in 15L. However, I learnt a lot about vim and the github CLI, something I would never touch otherwise as I had VS Code set up to where it interfaces flawlessly with GitHub Desktop and WSL.
+Personally, I was familiar with most of the topics that were covered in 15L. However, I learnt a lot about vim and the github CLI, something I would never touch otherwise as I had VS Code set up to where it interfaces flawlessly with GitHub Desktop and WSL. I also loved the lab experience as a whole. I found that interacting with peers and helping them out really improved my knowledge in those topics. 
 
